@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="changeset/changeset_tables.xml"/>
+
+
+    <changeSet id="base_data" author="srw">
+        <loadData
+                file="seed/prod/users.csv"
+                tableName="User" schemaName="booker"/>
+        <loadData
+                file="seed/prod/activities.csv"
+                tableName="Activity" schemaName="booker"/>
+        <loadData
+                file="seed/prod/bookings.csv"
+                tableName="User_Activity" schemaName="booker"/>
+        <loadData
+                file="seed/prod/exclusions.csv"
+                tableName="Exclusion" schemaName="booker"/>
+
+    </changeSet>
+</databaseChangeLog>

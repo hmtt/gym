@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+
+    <changeSet id="user_create" author="srw" failOnError="true">
+        <comment>Create User table</comment>
+        <createTable schemaName="booker" tableName="User">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(150)"/>
+            <column name="passcode" type="varchar(4)"/>
+            <column name="lastLoggedIn" type="dateTime"/>
+            <column name="failedToLoginCount" type="int" defaultValue="0"/>
+            <column name="enabled" type="boolean" valueBoolean="true" defaultValueBoolean="false"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="User"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="activity_create" author="srw" failOnError="true">
+        <comment>Create Activity table</comment>
+        <createTable schemaName="booker" tableName="Activity">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="className" type="varchar(150)"/>
+            <column name="classDate" type="varchar(50)"/>
+            <column name="lastChecked" type="dateTime"/>
+        </createTable>
+        <addUniqueConstraint columnNames="id, className, classDate"
+                             constraintName="unq_activity_const"
+                             schemaName="booker"
+                             tableName="Activity"/>
+        <rollback>
+            <dropTable tableName="Activity"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="user_activity_create" author="srw" failOnError="true">
+        <comment>Create Activity table</comment>
+        <createTable schemaName="booker" tableName="User_Activity">
+            <column name="userId" type="int"/>
+            <column name="activityId" type="int"/>
+            <column name="lastBooked" type="dateTime"/>
+        </createTable>
+        <addForeignKeyConstraint constraintName="fk_userid_gymid" referencedColumnNames="id" referencedTableName="User"
+                                 referencedTableSchemaName="booker" baseColumnNames="userId"
+                                 baseTableName="User_Activity"
+                                 baseTableSchemaName="booker"/>
+        <addForeignKeyConstraint constraintName="fk_activityid_gymid" referencedColumnNames="id"
+                                 referencedTableName="Activity"
+                                 referencedTableSchemaName="booker" baseColumnNames="activityId"
+                                 baseTableName="User_Activity"
+                                 baseTableSchemaName="booker"/>
+        <rollback>
+            <dropTable tableName="User_Activity"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="exclusion_create" author="srw" failOnError="true">
+        <comment>Create Exclusion table</comment>
+        <createTable schemaName="booker" tableName="Exclusion">
+            <column name="userActivity_userId" type="int"/>
+            <column name="userActivity_activityId" type="int"/>
+            <column name="exclusionDate" type="date"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="Exclusion"/>
+        </rollback>
+    </changeSet>
+
+
+</databaseChangeLog>

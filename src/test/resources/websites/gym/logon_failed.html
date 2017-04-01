@@ -1,0 +1,805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <link id="ctl00_FaviconLink" rel="shortcut icon" href="images/Icons/favicon.ico" type="image/x-icon"/>
+    <title>
+
+        Online Booking
+
+    </title>
+    <!--[if IE 6]>
+    <style type="text/css">
+        img, { behavior: url("/Connect/PNGFIX/iepngfix.htc") }
+
+    </style>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="StaticCss/jquery.autocomplete.css"/>
+    <link href="App_Themes/Default/CombinedStyles.css" type="text/css" rel="stylesheet"/>
+    <link href="/Connect/WebResource.axd?d=8PzNGg0a7GWX8VyLplIDsYN7ipaKXEj_BVCwfzwNGtVu0gtHhjyCdhByChfmk2S2cQCorM1kAn7sPQWtP6OW16uzuJENRKUCaH3mYCk7UwgHAvNB5T4Zg7K9zjYFE2ACfKTEbYhOX56MzRLBxi92NDHMLJo1&amp;t=635429136520000000"
+          type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<script type="text/javascript">
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+
+</script>
+
+<script src='/Connect/inc/Connect.js' language="javascript" type="text/javascript"></script>
+
+<form name="aspnetForm" method="post" action="mrmlogin.aspx?Culture=en-GB"
+      onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+    <div>
+        <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""/>
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""/>
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""/>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+               value="UmIc/TBLO2ZOQ16qXPf3GOvHC26CAj7kXncwpwZfvUAd8cDFQn1/3n4dqCe/XkTb7/ZDoHlRpnN5WIeE2uxT2/sCV4cr2futLwG5W2W01QiVHij5E6/KsGYeRZPDIpmocHcKHQ7JPWLHL/+XJRKXRbjVGG9EFQ/9OlyDkyGiQPcjYPQUfpp5mdW7fbd+MPJ5uvamNKQ2drxh/be1CVeK1HtRqJWxCJH3N0cNlXSlUA9gDcFNLSJJ1EGsDBH2yeofW0ZiQmpXLYSr01Cp+AJ3XnbDczDO6DKhgY6m0lqq2gUMZpHe8D+qQd8cn9W7CYZV5rH6ANyolzeVcN7G2RnuqsAAx0cwfH/6qFlb5OnhfduHQqI7y5Hmgb8StEg8unS731P7f+BKShLI8yJ2UArF86wBSEX9NBY+y1wkTj57gRHbNBb1rlE6YhfLsFbe/IaZybR8t1vqtMT/B4TqH9dndN2vfqDvMxHTEPaeJk/eoIrMGVmFf4pCGLrKqYkD1R0iNVxqhyufgc+CofBSJcKeTlnd+mF/++eKc17/oQZWXjQiDDnkpLEyHJrHsN9NWIMpwEkSFlxUWS2wCzBB6RUlsX1MQminJ4ecrAtGkdw7amm/6rDVYkyoqRP5D3kBstAnesOmBnUiHAauJpyXquXQ4NZHfCRzpiS8OGHDXxfNw1zL7Wm2GL1kF/ty0RlUZoAhcZcJ0G+MR00r1CJLnAF/OxDfHwnu01ejwpZ8sZWNvDv/f51JMFYqAco0MREwbL6/29Otv6uIVgONJya3yEMa5zzby/dUfG1LkbYYZ2njTmvv5PN1F8nXEbxS16oro5DaZaI89V6AsgIqW2vazWRyneSI7A1SXVdjcq2BgM+b/M40La75iwswEBlH44yYKoQpn/ayveP6McJkvGVNeONw3RcJhicE73cmAyS5UDzXtVbEZ7SfHjTB6xI2hkOcubmRU5AtpvE0mGjIq8i3/vCWRxIgsAY5T5V5+1nEIkLJy0y+saqAeo6HdX7uqgMZq8/oY0Z9TIFNijv4LFptBZpRrsEo5/pxQ1qYpCX53On+9da81tnz9JMU0vDzb0pd+bM9/XP4Y+YOxmTuLqL+eLuFT5oLjyE/Yjc67s07JAYhepC4162SGoxU3DpmI3Ri99wwVk7XTN+r8IGrp7Vo4a5LZ5lW9DzGufqtW82trvyUEniDmuYxB8W8Wwo2Hkc5ZX9dERYPf+R7Y6d2ys7o4PzI1xaJCP+MqRsPT59y0iiLcRVmNwnNhly9oeHKXSNo/N/KhND93BRHtG9tZUFiZl9Ua2schNL16Q7nhPOJINggFkzLb8noYq/cOa0LExMA/6uZqly0Rh7MRVJMyB5le+yylI/VUDjbpkNnfYu2F8kkH+78N3KzdBZUccwHj+H1ynbRTyw7tceJvUEG5FCikSwleEHDhxOj4SBw9heCnhpOzgvdthKg1WkTATgjDRTsYbV5Cj9PxZXq8kyRwFK+yJ01W4A3vjrasCkLjWCbFW8V36SACe58J02k4TvIeL9FrjeIgL3Nx1ydbujNjEu8f+O6y8Gvy/hLs4ng2SOE6znLLCx2uXTsnGZomuqq7+EFtswFg+lxEuXje1TqAnwot+hvy4OrsVjPCtyGxyEVpZvyUhjMEMDBFzWyzykncXnwkha5bF1feTDUOWj0VsNLynXH8UL1NhAZ1QWzHH12BO4u9mJz4yyN06jVQXi/J7FzgwKLB2XRHg=="/>
+    </div>
+
+    <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+
+    </script>
+
+
+    <script src="/Connect/WebResource.axd?d=Zp5UPG8dA95xmta-erONBFpU1kufs85pb8MvMHez-s0zmyUAuGFs_bFPic-zKzfsRM63D0jLZ2Vfqb1Lf5Dx8-IDl1U1&amp;t=635316005528827089"
+            type="text/javascript"></script>
+
+
+    <script src="inc/jquery-merge.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = '{"name":"en-GB","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"£","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infinity","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"Infinity","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":0,"FullDateTimePattern":"dd MMMM yyyy HH:mm:ss","LongDatePattern":"dd MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"dd MMMM","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]}}';//]]>
+
+    </script>
+
+    <script src="/Connect/ScriptResource.axd?d=iv3-yGmS-XAdceo4gubfPnPTIRiJa94J-RtsRTW4U8-6WeNuxlAUVvXLu-j9xwQPbrDOjthCKCHT1fKEy6lwZCWMt6-H_V4mfCJ0FSV_V3vAslpl8WvKb48p1raRcEsbfdNdDGWO0bk2EDWpzturELKl1OQ1&amp;t=71a04a64"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=zuCeJdq4EifEGR85LfXSCwhx-cvNih_B8CH-XqPS7BN7mOWgy6AByzIuKP6jC77Ue0AK6IcL9N3alyY1LJCFkUOd3nzhn_NnyfyUVLm3w2AAI4x2jK63NHTRjWdeOpfYkqmYSn-meeVtpqon4RF96eGFt1sp5M9XEbIKXf3MN7diBcVB0&amp;t=71a04a64"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=9jhRVCCnw0ApYd4TImSrGlz3rrpYivVUliEJKxMko-wMOewCU08c-adoUnMvfkYbbs-cuNCBqLvxCvkDVfQG3EhGJqJbE9l5hLi2ylkmlswRGkLr7v2jm-pPLj-bqQYaKxfHi4xs29feDR7qyveka4JFj5s1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=2sPFvSZe-jCoOkcDqkd8T75xp83HEkxbJjmEUp9jz8e9BfNsOGH3YBcbUAKgm8V4kwehbU6cR7x9JZlLipLRF4hDCiGmy2R0O_mQJXlLbUXJJbqycwodP-CylDth5BX27JQbHbm3wFeZpQVtTs9SyjoLgOg1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=4vicb07xE0c_ZI1vNP-trXNpHADKTQaxq6XO60rlSxpmbZvRMVBQ4Pw48UH3vWpnN5vHDLMueXQKabyDxDH2mpibLNXmGLNcaiw4hry00J9sc_AdUkGbuOGV3eBGN86JoJTf0wGAOq5MPhJdrNJmtqRSTmtxYiko0dXrupEgh8uDOgsM0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=mAPisl_Ln3Sq2dBP2-4ciJmdMVGkR7OGT0mD_uG8Sd4aL2XmyTYNjxO9QLB_Cy3QZfNxwiRuyWpmlc5eDPqfPe9yjBua9GrPVCxRpiSn2NO_Nvv12M0BsnTYmPmpVBYmFM8NwLzivNrWs4O1anmqv77joG41&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=f9e2W8HMJ--hOkrbL6fedI0XgMAaJlnHIHyWXgwrR1zF250OWRbII8vbu0poAmDMJ36SLyuCNG3o_ZrR6thtcfU2TCahcLlRb2G1hQWe4LS7uN_vJ8X6IgQShpNc5jn1NOZdz8GkHwyMGgoRljpK3NwuGpE1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=gII-l_RlIv9CP_M3QrpCHyNsJTBiO9McZDV-9j0EU8zhh-P4q8hX-OLuNhmLdBFriKTCnJ_eV2_73mDTaIKag6mwyytonwV87h6tiogutFGnUn_VuL_YVtiwrzclXDZVEdD2fg5bcGSVonVIrhEeCb5eYYWG9-WhisA01l5AdY23ER4V0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=skmLAC5n28rOww6P9-kdfYrHjNXTpookZFR3vuOJoyCV7ERtj86LNwBBA5oQBDJQbihOfA_8VfojyHijTalSeDKsoyPSF54R6WYE1HGp865k2hTIU3_WjWiBabZKLIjedDt8U8EoAMQJ7iQ0BWO9_wLW7Pp8_YvIFu_PDu4Ypy03OCyk0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=ScZzVTObKio8PBgYLlSfAP9NF--cA6wE0HAr9981XBn42x4wOaaEtJ5ZDhHuP2rv6-ct-6o1I531vGsiKo6SAbLhXQLMIl_F2X6YX43qFiOkEBJiNfZEtQ562rJfmjIApIyEazJf7GZbu5nB0iqnTQBzyOP2aDwRdJ5P4ll0N7cG-5yU0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=7fLLfQPmTJgmX_QpGzCw38IyQi-H0cqDwG4qb9b4WvF4TqKCEM0juEmZufiQa1igB8KJqscGFpuiIHm6sZuEae1WsnMJl1S3yILz9F94rw5cG9TTxCp7upcO3aDIHXbntxk8_Djk9D2RV99gy99mrUNg-El2I3CJQsfwpvzII7z1a_dH0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/WebResource.axd?d=hbxJUzJVmMq-cIYXpAx4RrQoYPK6h8MMQYaxbNpW8eYUOxy065THmukmxaWtdeb3xDgQcbln6ZIMNU_9NgvpPjTXlPs1&amp;t=635316005528827089"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+var hf=document.getElementById('ctl00_MainContent_JavascriptEnabled');
+hf.value = 1;
+null;
+return true;
+}
+//]]>
+
+    </script>
+
+    <div>
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="626D2CB1"/>
+        <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value=""/>
+    </div>
+
+    <div>
+
+    </div>
+    <div id="divHeading" class="tblleftcol">
+
+
+    </div>
+    <div id="pagewrapper">
+        <div class="pageinnertube">
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['fctl00$updPlaceholder'], [], [], 90);
+//]]>
+
+            </script>
+
+            <div id="maincontainer">
+                <div id="topsection">
+                    <div class="LoginHeaderMenu">
+                        <a href="http://www.activestirling.org.uk/Online-Booking-Terms-and-Conditions/" target="_blank">Terms
+                            and conditions</a>
+                        <a href="help.aspx">Help</a>
+                    </div>
+                    <img id="ctl00_Image1" class="absImage" src="App_Themes/Default/Images/connect_headRight.jpg"
+                         alt="Connect" style="border-width:0px;"/>
+
+                    <div class="innertube" style="height: 121px">
+                        <img id="ctl00_websiteLogo" class="Logo"
+                             src="App_Themes/Default/Images/connect_head_logoleft.png"
+                             alt="Connect Online Booking System" style="border-width:0px;"/>
+                    </div>
+                    <div class="topmenu">
+                        <div class="topmenu_logOutMenu">
+                            <div id="ctl00_outerLinks">
+
+                                <div class="topmenu_logOutMenu_dontdisplay">
+
+
+                                </div>
+                                <!--
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_Helplnk" href="help.aspx">Help</a>
+                                </div>
+                                -->
+
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_ProfileLink" disabled="disabled">My details</a>
+                                </div>
+
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_LoginControl_Loginlnk" title="Login" href="mrmlogin.aspx">Login</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tl">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="contentwrapper">
+                    <div id="contentcolumn">
+                        <div class="innertube">
+
+
+                            <link href="/connect/App_Themes/extrastyles/LoginPageJoinAtHomeOnly.css" rel="stylesheet"
+                                  type="text/css"></link>
+
+                            <script type="text/javascript">
+        //<![CDATA[
+
+        $(document).ready(function() {
+            $('.LoginText').attr('autocomplete', 'off');
+        });
+
+        $(document).ready(function() {		
+			$('.welcomeMessage').click(function(){
+				window.location.replace("https://connect.activestirling.org.uk/joinathome/")
+			});
+		});
+
+        //]]>
+
+                            </script>
+
+
+                            <div class="welcomeMessage">
+                                <h1>Welcome</h1>
+                            </div>
+
+
+                            <div id="ctl00_MainContent_loginpanel" class="login"
+                                 onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_MainContent_btnLogin')">
+
+
+                                <div class="innertube">
+                                    <h2>Book classes here</h2>
+                                    <style>
+			.topmenu {
+			display: none !important;
+			}
+
+                                    </style>
+                                    <!-- <link href="/connect34/App_Themes/Default/LoginAdditionalStyles.css" rel="stylesheet" type="text/css"></link> -->
+
+                                    <p>
+			<span class="dontdisplay">
+				<label for="ctl00_MainContent_InputLogin" id="ctl00_MainContent_lblIdentificationType"
+                       class="LoginLabel">Your Email Address:</label>
+			</span>
+                                        <label>
+                                            Your e-mail address:
+                                        </label>
+                                        <input name="ctl00$MainContent$InputLogin" type="text"
+                                               id="ctl00_MainContent_InputLogin" title="Email Address"
+                                               class="LoginText"/>
+
+                                    </p>
+                                    <input type="hidden" name="ctl00$MainContent$JavascriptEnabled"
+                                           id="ctl00_MainContent_JavascriptEnabled"/>
+                                    <p>
+		
+		<span class="dontdisplay">
+			<label for="ctl00_MainContent_InputPassword" id="ctl00_MainContent_lblValidationType" class="LoginLabel">Your PIN:</label>
+		</span>
+                                        <label>
+                                            Your 4 digit pin:
+                                        </label>
+                                        <input name="ctl00$MainContent$InputPassword" type="password" maxlength="4"
+                                               id="ctl00_MainContent_InputPassword" title="PIN" class="LoginText"/>
+
+                                    </p>
+
+
+                                    <p>
+                                        <a id="ctl00_MainContent_forgotPasswordHyperLink" class="forgotPasswordLink"
+                                           href="MemberManagement/MRMpasswordrequest.aspx">
+                <span class="dontdisplay">
+					Forgotten your PIN?
+				</span>
+                                            Forgotten or need a new pin?
+                                        </a>
+                                    </p>
+
+                                    <p class="buttons">
+                                        <input type="submit" name="ctl00$MainContent$btnLogin" value="Log in"
+                                               id="ctl00_MainContent_btnLogin" class="button"/>
+                                    </p>
+
+
+                                    <p style="min-width:50;">
+
+
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="Modules">
+                                <div id="ctl00_MainContent_pnOnlineReg" class="RegistrationBox">
+
+                                    <div class="RegistrationMessage">
+                                        <h2>New to online booking?</h2>
+                                        <p>
+                                            Register with us <a
+                                                href="https://connect.activestirling.org.uk/joinathome/MemberRegistration.aspx">here</a>
+                                            to get your log in details and 4 digit pin.
+                                        </p>
+                                    </div>
+                                    <a id="ctl00_MainContent_ltOnlinePathlnk" class="button"
+                                       href="https://connect.activestirling.org.uk/joinathome">Sign up now</a>
+
+                                </div>
+
+
+                                <div class="clearOut">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="rightcolumn">
+
+                </div>
+                <input type="submit" name="ctl00$imAFake" value="" id="ctl00_imAFake" style="display: none"/>
+
+                <div id="ctl00_ModalPopUp" class="modal" style="width:600px;display: none;">
+
+                    <div style="float: right;">
+                        <input type="image" name="ctl00$btnClose" id="ctl00_btnClose" src="images/Icons/delete2.png"
+                               style="border-width:0px;"/>
+                    </div>
+                    <div id="ctl00_updPlaceholder">
+
+
+                    </div>
+
+                </div>
+                <div class="clearOut">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+
+
+        <div class="footer-tr">
+            <div class="footer-tl">
+                <div class="footer-top">
+                </div>
+                <div class="footer-right">
+                    <div class="footer-left">
+                        <div class="footerMain">
+
+
+                            <div class="PoweredBy">
+
+
+                                <a href="http://www.gladstonemrm.com" target="_blank">
+                                    <img id="ctl00_MrmFooter_footerImageCtl_imgLogo" class="logoPad"
+                                         src="/Connect/WebResource.axd?d=FpB46HoeHs2y-OplbVVXLY44bKDjCdBGTcCQ-1ZBPExBaiW3B7zlHjrZ8pfBCB20Kr08sOyiVNhVQd6G6FLYNUsrKZHZR0LbwkYRrh0M3HsqN-usIhuhkSAPgp9QemjhMk4G1XMtdZGnkX-eap9Ei4ja_9UKELMWVWf6kgNb5uuJjmRh0&amp;t=635429136520000000"
+                                         alt="Powered By Gladstone" style="height:45px;width:135px;border-width:0px;"/>
+                                </a>
+                            </div>
+
+                            <div class="clearOut"></div>
+
+                            <div id="ctl00_MrmFooter_PrivacyPolicyDiv" class="footer-left privacypolicy-wrapper"
+                                 style="text-align:left;">
+                                <a id="ctl00_MrmFooter_ppLink" title="Privacy Policy" class="privacypolicy"
+                                   href="PrivacyPolicy.aspx" target="_blank">Privacy Policy</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer-br">
+                    <div class="footer-bl">
+                        <div class="footer-bottom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('ctl00_MainContent_InputLogin');Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl00_btnClose","PopupControlID":"ctl00_ModalPopUp","dynamicServicePath":"/Connect/mrmlogin.aspx","id":"ctl00_mdlPopupMemberSearch"}, null, null, $get("ctl00_imAFake"));
+});
+//]]>
+
+    </script>
+</form>
+</body>
+</html>
+=======
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <link id="ctl00_FaviconLink" rel="shortcut icon" href="images/Icons/favicon.ico" type="image/x-icon"/>
+    <title>
+
+        Online Booking
+
+    </title>
+    <!--[if IE 6]>
+    <style type="text/css">
+        img, { behavior: url("/Connect/PNGFIX/iepngfix.htc") }
+
+    </style>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="StaticCss/jquery.autocomplete.css"/>
+    <link href="App_Themes/Default/CombinedStyles.css" type="text/css" rel="stylesheet"/>
+    <link href="/Connect/WebResource.axd?d=8PzNGg0a7GWX8VyLplIDsYN7ipaKXEj_BVCwfzwNGtVu0gtHhjyCdhByChfmk2S2cQCorM1kAn7sPQWtP6OW16uzuJENRKUCaH3mYCk7UwgHAvNB5T4Zg7K9zjYFE2ACfKTEbYhOX56MzRLBxi92NDHMLJo1&amp;t=635429136520000000"
+          type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<script type="text/javascript">
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+
+</script>
+
+<script src='/Connect/inc/Connect.js' language="javascript" type="text/javascript"></script>
+
+<form name="aspnetForm" method="post" action="mrmlogin.aspx?Culture=en-GB"
+      onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+    <div>
+        <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""/>
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""/>
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""/>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+               value="UmIc/TBLO2ZOQ16qXPf3GOvHC26CAj7kXncwpwZfvUAd8cDFQn1/3n4dqCe/XkTb7/ZDoHlRpnN5WIeE2uxT2/sCV4cr2futLwG5W2W01QiVHij5E6/KsGYeRZPDIpmocHcKHQ7JPWLHL/+XJRKXRbjVGG9EFQ/9OlyDkyGiQPcjYPQUfpp5mdW7fbd+MPJ5uvamNKQ2drxh/be1CVeK1HtRqJWxCJH3N0cNlXSlUA9gDcFNLSJJ1EGsDBH2yeofW0ZiQmpXLYSr01Cp+AJ3XnbDczDO6DKhgY6m0lqq2gUMZpHe8D+qQd8cn9W7CYZV5rH6ANyolzeVcN7G2RnuqsAAx0cwfH/6qFlb5OnhfduHQqI7y5Hmgb8StEg8unS731P7f+BKShLI8yJ2UArF86wBSEX9NBY+y1wkTj57gRHbNBb1rlE6YhfLsFbe/IaZybR8t1vqtMT/B4TqH9dndN2vfqDvMxHTEPaeJk/eoIrMGVmFf4pCGLrKqYkD1R0iNVxqhyufgc+CofBSJcKeTlnd+mF/++eKc17/oQZWXjQiDDnkpLEyHJrHsN9NWIMpwEkSFlxUWS2wCzBB6RUlsX1MQminJ4ecrAtGkdw7amm/6rDVYkyoqRP5D3kBstAnesOmBnUiHAauJpyXquXQ4NZHfCRzpiS8OGHDXxfNw1zL7Wm2GL1kF/ty0RlUZoAhcZcJ0G+MR00r1CJLnAF/OxDfHwnu01ejwpZ8sZWNvDv/f51JMFYqAco0MREwbL6/29Otv6uIVgONJya3yEMa5zzby/dUfG1LkbYYZ2njTmvv5PN1F8nXEbxS16oro5DaZaI89V6AsgIqW2vazWRyneSI7A1SXVdjcq2BgM+b/M40La75iwswEBlH44yYKoQpn/ayveP6McJkvGVNeONw3RcJhicE73cmAyS5UDzXtVbEZ7SfHjTB6xI2hkOcubmRU5AtpvE0mGjIq8i3/vCWRxIgsAY5T5V5+1nEIkLJy0y+saqAeo6HdX7uqgMZq8/oY0Z9TIFNijv4LFptBZpRrsEo5/pxQ1qYpCX53On+9da81tnz9JMU0vDzb0pd+bM9/XP4Y+YOxmTuLqL+eLuFT5oLjyE/Yjc67s07JAYhepC4162SGoxU3DpmI3Ri99wwVk7XTN+r8IGrp7Vo4a5LZ5lW9DzGufqtW82trvyUEniDmuYxB8W8Wwo2Hkc5ZX9dERYPf+R7Y6d2ys7o4PzI1xaJCP+MqRsPT59y0iiLcRVmNwnNhly9oeHKXSNo/N/KhND93BRHtG9tZUFiZl9Ua2schNL16Q7nhPOJINggFkzLb8noYq/cOa0LExMA/6uZqly0Rh7MRVJMyB5le+yylI/VUDjbpkNnfYu2F8kkH+78N3KzdBZUccwHj+H1ynbRTyw7tceJvUEG5FCikSwleEHDhxOj4SBw9heCnhpOzgvdthKg1WkTATgjDRTsYbV5Cj9PxZXq8kyRwFK+yJ01W4A3vjrasCkLjWCbFW8V36SACe58J02k4TvIeL9FrjeIgL3Nx1ydbujNjEu8f+O6y8Gvy/hLs4ng2SOE6znLLCx2uXTsnGZomuqq7+EFtswFg+lxEuXje1TqAnwot+hvy4OrsVjPCtyGxyEVpZvyUhjMEMDBFzWyzykncXnwkha5bF1feTDUOWj0VsNLynXH8UL1NhAZ1QWzHH12BO4u9mJz4yyN06jVQXi/J7FzgwKLB2XRHg=="/>
+    </div>
+
+    <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+
+    </script>
+
+
+    <script src="/Connect/WebResource.axd?d=Zp5UPG8dA95xmta-erONBFpU1kufs85pb8MvMHez-s0zmyUAuGFs_bFPic-zKzfsRM63D0jLZ2Vfqb1Lf5Dx8-IDl1U1&amp;t=635316005528827089"
+            type="text/javascript"></script>
+
+
+    <script src="inc/jquery-merge.js" type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = '{"name":"en-GB","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"£","NaNSymbol":"NaN","CurrencyNegativePattern":1,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-Infinity","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"Infinity","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":0,"FullDateTimePattern":"dd MMMM yyyy HH:mm:ss","LongDatePattern":"dd MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"dd MMMM","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]}}';//]]>
+
+    </script>
+
+    <script src="/Connect/ScriptResource.axd?d=iv3-yGmS-XAdceo4gubfPnPTIRiJa94J-RtsRTW4U8-6WeNuxlAUVvXLu-j9xwQPbrDOjthCKCHT1fKEy6lwZCWMt6-H_V4mfCJ0FSV_V3vAslpl8WvKb48p1raRcEsbfdNdDGWO0bk2EDWpzturELKl1OQ1&amp;t=71a04a64"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=zuCeJdq4EifEGR85LfXSCwhx-cvNih_B8CH-XqPS7BN7mOWgy6AByzIuKP6jC77Ue0AK6IcL9N3alyY1LJCFkUOd3nzhn_NnyfyUVLm3w2AAI4x2jK63NHTRjWdeOpfYkqmYSn-meeVtpqon4RF96eGFt1sp5M9XEbIKXf3MN7diBcVB0&amp;t=71a04a64"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=9jhRVCCnw0ApYd4TImSrGlz3rrpYivVUliEJKxMko-wMOewCU08c-adoUnMvfkYbbs-cuNCBqLvxCvkDVfQG3EhGJqJbE9l5hLi2ylkmlswRGkLr7v2jm-pPLj-bqQYaKxfHi4xs29feDR7qyveka4JFj5s1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=2sPFvSZe-jCoOkcDqkd8T75xp83HEkxbJjmEUp9jz8e9BfNsOGH3YBcbUAKgm8V4kwehbU6cR7x9JZlLipLRF4hDCiGmy2R0O_mQJXlLbUXJJbqycwodP-CylDth5BX27JQbHbm3wFeZpQVtTs9SyjoLgOg1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=4vicb07xE0c_ZI1vNP-trXNpHADKTQaxq6XO60rlSxpmbZvRMVBQ4Pw48UH3vWpnN5vHDLMueXQKabyDxDH2mpibLNXmGLNcaiw4hry00J9sc_AdUkGbuOGV3eBGN86JoJTf0wGAOq5MPhJdrNJmtqRSTmtxYiko0dXrupEgh8uDOgsM0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=mAPisl_Ln3Sq2dBP2-4ciJmdMVGkR7OGT0mD_uG8Sd4aL2XmyTYNjxO9QLB_Cy3QZfNxwiRuyWpmlc5eDPqfPe9yjBua9GrPVCxRpiSn2NO_Nvv12M0BsnTYmPmpVBYmFM8NwLzivNrWs4O1anmqv77joG41&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=f9e2W8HMJ--hOkrbL6fedI0XgMAaJlnHIHyWXgwrR1zF250OWRbII8vbu0poAmDMJ36SLyuCNG3o_ZrR6thtcfU2TCahcLlRb2G1hQWe4LS7uN_vJ8X6IgQShpNc5jn1NOZdz8GkHwyMGgoRljpK3NwuGpE1&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=gII-l_RlIv9CP_M3QrpCHyNsJTBiO9McZDV-9j0EU8zhh-P4q8hX-OLuNhmLdBFriKTCnJ_eV2_73mDTaIKag6mwyytonwV87h6tiogutFGnUn_VuL_YVtiwrzclXDZVEdD2fg5bcGSVonVIrhEeCb5eYYWG9-WhisA01l5AdY23ER4V0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=skmLAC5n28rOww6P9-kdfYrHjNXTpookZFR3vuOJoyCV7ERtj86LNwBBA5oQBDJQbihOfA_8VfojyHijTalSeDKsoyPSF54R6WYE1HGp865k2hTIU3_WjWiBabZKLIjedDt8U8EoAMQJ7iQ0BWO9_wLW7Pp8_YvIFu_PDu4Ypy03OCyk0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=ScZzVTObKio8PBgYLlSfAP9NF--cA6wE0HAr9981XBn42x4wOaaEtJ5ZDhHuP2rv6-ct-6o1I531vGsiKo6SAbLhXQLMIl_F2X6YX43qFiOkEBJiNfZEtQ562rJfmjIApIyEazJf7GZbu5nB0iqnTQBzyOP2aDwRdJ5P4ll0N7cG-5yU0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/ScriptResource.axd?d=7fLLfQPmTJgmX_QpGzCw38IyQi-H0cqDwG4qb9b4WvF4TqKCEM0juEmZufiQa1igB8KJqscGFpuiIHm6sZuEae1WsnMJl1S3yILz9F94rw5cG9TTxCp7upcO3aDIHXbntxk8_Djk9D2RV99gy99mrUNg-El2I3CJQsfwpvzII7z1a_dH0&amp;t=ffffffffd2e6f8cb"
+            type="text/javascript"></script>
+    <script src="/Connect/WebResource.axd?d=hbxJUzJVmMq-cIYXpAx4RrQoYPK6h8MMQYaxbNpW8eYUOxy065THmukmxaWtdeb3xDgQcbln6ZIMNU_9NgvpPjTXlPs1&amp;t=635316005528827089"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+var hf=document.getElementById('ctl00_MainContent_JavascriptEnabled');
+hf.value = 1;
+null;
+return true;
+}
+//]]>
+
+    </script>
+
+    <div>
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="626D2CB1"/>
+        <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value=""/>
+    </div>
+
+    <div>
+
+    </div>
+    <div id="divHeading" class="tblleftcol">
+
+
+    </div>
+    <div id="pagewrapper">
+        <div class="pageinnertube">
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['fctl00$updPlaceholder'], [], [], 90);
+//]]>
+
+            </script>
+
+            <div id="maincontainer">
+                <div id="topsection">
+                    <div class="LoginHeaderMenu">
+                        <a href="http://www.activestirling.org.uk/Online-Booking-Terms-and-Conditions/" target="_blank">Terms
+                            and conditions</a>
+                        <a href="help.aspx">Help</a>
+                    </div>
+                    <img id="ctl00_Image1" class="absImage" src="App_Themes/Default/Images/connect_headRight.jpg"
+                         alt="Connect" style="border-width:0px;"/>
+
+                    <div class="innertube" style="height: 121px">
+                        <img id="ctl00_websiteLogo" class="Logo"
+                             src="App_Themes/Default/Images/connect_head_logoleft.png"
+                             alt="Connect Online Booking System" style="border-width:0px;"/>
+                    </div>
+                    <div class="topmenu">
+                        <div class="topmenu_logOutMenu">
+                            <div id="ctl00_outerLinks">
+
+                                <div class="topmenu_logOutMenu_dontdisplay">
+
+
+                                </div>
+                                <!--
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_Helplnk" href="help.aspx">Help</a>
+                                </div>
+                                -->
+
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_ProfileLink" disabled="disabled">My details</a>
+                                </div>
+
+                                <div class="topmenu_logOutMenu_singleItem">
+                                    <a id="ctl00_LoginControl_Loginlnk" title="Login" href="mrmlogin.aspx">Login</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tl">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="contentwrapper">
+                    <div id="contentcolumn">
+                        <div class="innertube">
+
+
+                            <link href="/connect/App_Themes/extrastyles/LoginPageJoinAtHomeOnly.css" rel="stylesheet"
+                                  type="text/css"></link>
+
+                            <script type="text/javascript">
+        //<![CDATA[
+
+        $(document).ready(function() {
+            $('.LoginText').attr('autocomplete', 'off');
+        });
+
+        $(document).ready(function() {		
+			$('.welcomeMessage').click(function(){
+				window.location.replace("https://connect.activestirling.org.uk/joinathome/")
+			});
+		});
+
+        //]]>
+
+                            </script>
+
+
+                            <div class="welcomeMessage">
+                                <h1>Welcome</h1>
+                            </div>
+
+
+                            <div id="ctl00_MainContent_loginpanel" class="login"
+                                 onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_MainContent_btnLogin')">
+
+
+                                <div class="innertube">
+                                    <h2>Book classes here</h2>
+                                    <style>
+			.topmenu {
+			display: none !important;
+			}
+
+                                    </style>
+                                    <!-- <link href="/connect34/App_Themes/Default/LoginAdditionalStyles.css" rel="stylesheet" type="text/css"></link> -->
+
+                                    <p>
+			<span class="dontdisplay">
+				<label for="ctl00_MainContent_InputLogin" id="ctl00_MainContent_lblIdentificationType"
+                       class="LoginLabel">Your Email Address:</label>
+			</span>
+                                        <label>
+                                            Your e-mail address:
+                                        </label>
+                                        <input name="ctl00$MainContent$InputLogin" type="text"
+                                               id="ctl00_MainContent_InputLogin" title="Email Address"
+                                               class="LoginText"/>
+
+                                    </p>
+                                    <input type="hidden" name="ctl00$MainContent$JavascriptEnabled"
+                                           id="ctl00_MainContent_JavascriptEnabled"/>
+                                    <p>
+		
+		<span class="dontdisplay">
+			<label for="ctl00_MainContent_InputPassword" id="ctl00_MainContent_lblValidationType" class="LoginLabel">Your PIN:</label>
+		</span>
+                                        <label>
+                                            Your 4 digit pin:
+                                        </label>
+                                        <input name="ctl00$MainContent$InputPassword" type="password" maxlength="4"
+                                               id="ctl00_MainContent_InputPassword" title="PIN" class="LoginText"/>
+
+                                    </p>
+
+
+                                    <p>
+                                        <a id="ctl00_MainContent_forgotPasswordHyperLink" class="forgotPasswordLink"
+                                           href="MemberManagement/MRMpasswordrequest.aspx">
+                <span class="dontdisplay">
+					Forgotten your PIN?
+				</span>
+                                            Forgotten or need a new pin?
+                                        </a>
+                                    </p>
+
+                                    <p class="buttons">
+                                        <input type="submit" name="ctl00$MainContent$btnLogin" value="Log in"
+                                               id="ctl00_MainContent_btnLogin" class="button"/>
+                                    </p>
+
+
+                                    <p style="min-width:50;">
+
+
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="Modules">
+                                <div id="ctl00_MainContent_pnOnlineReg" class="RegistrationBox">
+
+                                    <div class="RegistrationMessage">
+                                        <h2>New to online booking?</h2>
+                                        <p>
+                                            Register with us <a
+                                                href="https://connect.activestirling.org.uk/joinathome/MemberRegistration.aspx">here</a>
+                                            to get your log in details and 4 digit pin.
+                                        </p>
+                                    </div>
+                                    <a id="ctl00_MainContent_ltOnlinePathlnk" class="button"
+                                       href="https://connect.activestirling.org.uk/joinathome">Sign up now</a>
+
+                                </div>
+
+
+                                <div class="clearOut">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="rightcolumn">
+
+                </div>
+                <input type="submit" name="ctl00$imAFake" value="" id="ctl00_imAFake" style="display: none"/>
+
+                <div id="ctl00_ModalPopUp" class="modal" style="width:600px;display: none;">
+
+                    <div style="float: right;">
+                        <input type="image" name="ctl00$btnClose" id="ctl00_btnClose" src="images/Icons/delete2.png"
+                               style="border-width:0px;"/>
+                    </div>
+                    <div id="ctl00_updPlaceholder">
+
+
+                    </div>
+
+                </div>
+                <div class="clearOut">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+
+
+        <div class="footer-tr">
+            <div class="footer-tl">
+                <div class="footer-top">
+                </div>
+                <div class="footer-right">
+                    <div class="footer-left">
+                        <div class="footerMain">
+
+
+                            <div class="PoweredBy">
+
+
+                                <a href="http://www.gladstonemrm.com" target="_blank">
+                                    <img id="ctl00_MrmFooter_footerImageCtl_imgLogo" class="logoPad"
+                                         src="/Connect/WebResource.axd?d=FpB46HoeHs2y-OplbVVXLY44bKDjCdBGTcCQ-1ZBPExBaiW3B7zlHjrZ8pfBCB20Kr08sOyiVNhVQd6G6FLYNUsrKZHZR0LbwkYRrh0M3HsqN-usIhuhkSAPgp9QemjhMk4G1XMtdZGnkX-eap9Ei4ja_9UKELMWVWf6kgNb5uuJjmRh0&amp;t=635429136520000000"
+                                         alt="Powered By Gladstone" style="height:45px;width:135px;border-width:0px;"/>
+                                </a>
+                            </div>
+
+                            <div class="clearOut"></div>
+
+                            <div id="ctl00_MrmFooter_PrivacyPolicyDiv" class="footer-left privacypolicy-wrapper"
+                                 style="text-align:left;">
+                                <a id="ctl00_MrmFooter_ppLink" title="Privacy Policy" class="privacypolicy"
+                                   href="PrivacyPolicy.aspx" target="_blank">Privacy Policy</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer-br">
+                    <div class="footer-bl">
+                        <div class="footer-bottom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('ctl00_MainContent_InputLogin');Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl00_btnClose","PopupControlID":"ctl00_ModalPopUp","dynamicServicePath":"/Connect/mrmlogin.aspx","id":"ctl00_mdlPopupMemberSearch"}, null, null, $get("ctl00_imAFake"));
+});
+//]]>
+
+    </script>
+</form>
+</body>
+</html>
