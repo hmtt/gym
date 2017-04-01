@@ -50,10 +50,7 @@ public class Booker {
     public void book() {
         final Map<User, Set<UserActivity>> bookingRequests = userActivityService.getBookingRequests();
 
-        Iterator<Map.Entry<User, Set<UserActivity>>> iterator = bookingRequests.entrySet().iterator();
-
-        while (iterator.hasNext()) {
-            Map.Entry<User, Set<UserActivity>> user = iterator.next();
+        for (Map.Entry<User, Set<UserActivity>> user : bookingRequests.entrySet()) {
             if (!user.getKey().isEnabled()) {
                 logger.debug("Skipping user {}. Not enabled.", user.getKey().getEmail());
                 continue;

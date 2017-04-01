@@ -70,13 +70,10 @@ public class DevDataConfig {
     private class Populator implements DatabasePopulator {
         @Override
         public void populate(Connection connection) throws SQLException {
-            Statement statement = connection.createStatement();
-            try {
+            try (Statement statement = connection.createStatement()) {
                 statement.execute("CREATE SCHEMA " + siteName);
             } catch (JdbcSQLException e) {
                 LOGGER.error("Could not create schema", e);
-            } finally {
-                statement.close();
             }
         }
     }

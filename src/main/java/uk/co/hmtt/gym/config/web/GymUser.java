@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
+import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
+
 public class GymUser extends User {
 
     private static final long serialVersionUID = 1L;
@@ -23,7 +25,7 @@ public class GymUser extends User {
 
     @Override
     public boolean equals(Object obj) {
-        return EqualsBuilder.reflectionEquals(this, obj);
+        return reflectionEquals(this, obj);
     }
 
     @Override

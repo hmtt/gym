@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by swilson on 15/11/16.
- */
 public class BookingPage {
 
     @FindBy(id = "ctl00_MainContent_gvClasses")

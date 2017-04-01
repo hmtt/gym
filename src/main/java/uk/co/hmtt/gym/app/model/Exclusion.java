@@ -26,10 +26,6 @@ public class Exclusion implements Serializable {
         return userActivity;
     }
 
-//    public void setUserActivity(UserActivity userActivity) {
-//        this.userActivity = userActivity;
-//    }
-
     @Temporal(value = TemporalType.DATE)
     @Column(name = "exclusionDate", nullable = false, insertable = false, updatable = false)
     public Date getExclusionDate() {
